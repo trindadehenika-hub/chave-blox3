@@ -1,0 +1,21 @@
+{
+  "name": "chave-blox-pix",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Loja Chave Blox com gerador de PIX estático com valor preenchido",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev:netlify": "netlify dev"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "netlify-cli": "^23.0.0"
+  }
+}
