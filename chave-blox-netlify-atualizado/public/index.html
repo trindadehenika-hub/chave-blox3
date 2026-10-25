@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f97316">
+<title>Chave Blox | Loja Blox Fruits</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="/"><span class="brand-icon">CB</span><span>CHAVE <b>BLOX</b><small>BLOX FRUITS STORE</small></span></a><span class="secure"><span class="dot"></span> PIX com valor preenchido</span></header>
+<main>
+<section class="hero"><div class="eyebrow">✦ SUA LOJA BLOX FRUITS</div><h1>Confirme o produto<br><span>que você escolheu</span></h1><p>Selecione um produto, escolha a quantidade permitida e gere o PIX com o valor do pedido.</p><div class="hero-tags"><span>PIX Copia e Cola</span><span>Atendimento pelo Discord</span><span>Não pedimos senha Roblox</span></div></section>
+<section class="shop-layout">
+<div class="panel"><div class="section-heading"><div><span class="eyebrow">CATÁLOGO</span><h2>Escolha um produto</h2></div><span class="count" id="product-count">…</span></div><div id="category-filters" class="category-filters"></div><div id="products" class="products"><div class="loading">Carregando catálogo…</div></div></div>
+<aside class="panel"><span class="eyebrow">FINALIZAR PEDIDO</span><h2>Confirme o produto que você escolheu</h2><p class="muted">Informe seus dados para identificarmos o pedido.</p>
+<form id="checkout-form"><label for="buyer-name">Nome do comprador</label><input id="buyer-name" autocomplete="name" required minlength="2" maxlength="80" placeholder="Seu nome">
+<label for="discord-user">Usuário completo do Discord</label><input id="discord-user" required minlength="2" maxlength="100" placeholder="Ex.: usuario ou usuario#0000">
+<div class="cart-heading"><strong>Produto selecionado</strong><button id="clear-cart" class="text-button" type="button">Limpar</button></div><div id="cart-items" class="cart-items"><p class="muted">Nenhum produto selecionado.</p></div>
+<div class="summary"><span>Total do pedido</span><strong id="selected-price">R$ 0,00</strong></div><button id="pay-button" class="primary" type="submit" disabled>Gerar QR Code PIX <span>↗</span></button><p class="tiny">Cada pedido aceita um produto. A quantidade maior que 1 está disponível apenas para upgrades de Belly, Fragmentos e Level. O QR Code contém o valor, mas não confirma o pagamento. Confira o recebimento no seu banco antes de entregar os produtos.</p></form></aside>
+</section>
+<section id="payment-section" class="panel payment-panel hidden"><div class="section-heading"><div><span class="eyebrow">PIX GERADO</span><h2>Escaneie para pagar</h2></div><span class="status pending">Aguardando pagamento manual</span></div><div class="payment-content"><div class="qr-wrap"><img id="qr-image" alt="QR Code PIX com valor preenchido"><p class="tiny">Abra o aplicativo do seu banco e escaneie o código.</p></div><div class="pix-details"><p class="amount-line">Produto: <strong id="pix-product">—</strong></p><p class="amount-line">Valor: <strong id="pix-amount">R$ 0,00</strong></p><label for="pix-code">PIX Copia e Cola</label><textarea id="pix-code" readonly rows="6"></textarea><button id="copy-button" class="secondary" type="button">Copiar código PIX</button><p id="payment-message" class="muted">Após pagar, aguarde a confirmação manual da loja.</p><p class="tiny">Pedido: <code id="order-id"></code></p><p class="tiny">Comprador: <span id="order-buyer"></span> · Discord: <span id="order-discord"></span></p></div></div></section>
+<footer>© <span id="year"></span> Chave Blox · Loja independente, não afiliada à Roblox.</footer>
+</main><div id="toast" role="status" aria-live="polite" class="toast hidden"></div><script src="/app.js" defer></script>
+</body></html>
