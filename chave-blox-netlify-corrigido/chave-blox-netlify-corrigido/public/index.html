@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f97316">
+  <title>Gerador de QR Code Pix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="logo">PIX</div>
+      <h1>Gerador de QR Code Pix</h1>
+      <p>Cole sua chave Pix e gere um QR Code para receber pagamentos.</p>
+    </header>
+
+    <section class="panel">
+      <form id="pix-form">
+        <label for="key-type">Tipo de chave Pix</label>
+        <select id="key-type" required>
+          <option value="cpf">CPF</option>
+          <option value="cnpj">CNPJ</option>
+          <option value="phone">Telefone</option>
+          <option value="email">E-mail</option>
+          <option value="random">Chave aleatória</option>
+        </select>
+
+        <label for="pix-key">Chave Pix</label>
+        <input id="pix-key" type="text" placeholder="Digite o CPF (somente números)" autocomplete="off" required>
+        <p id="key-help" class="hint small">Informe os 11 números do CPF.</p>
+
+        <div class="grid">
+          <div>
+            <label for="amount">Valor (R$) <span class="optional">— opcional</span></label>
+            <input id="amount" type="number" min="0.01" step="0.01" placeholder="Ex.: 25,00">
+          </div>
+          <div>
+            <label for="receiver">Nome do recebedor</label>
+            <input id="receiver" type="text" maxlength="25" value="RECEBEDOR" required>
+          </div>
+        </div>
+
+        <label for="city">Cidade do recebedor</label>
+        <input id="city" type="text" maxlength="15" value="BRASILIA" required>
+
+        <button type="submit" class="primary">Gerar QR Code</button>
+      </form>
+      <p class="hint">Deixe o valor vazio para gerar um Pix sem valor definido. Quem pagar poderá informar o valor no aplicativo do banco, quando essa opção for aceita.</p>
+    </section>
+
+    <section id="result" class="panel result" hidden>
+      <h2>QR Code Pix</h2>
+      <div id="qrcode" aria-label="QR Code Pix"></div>
+      <p id="shown-amount" class="amount"></p>
+      <label for="payload">Pix Copia e Cola</label>
+      <textarea id="payload" rows="4" readonly></textarea>
+      <button id="copy" class="secondary" type="button">Copiar código Pix</button>
+      <p id="copy-status" class="status" aria-live="polite"></p>
+    </section>
+
+    <footer>Este gerador não confirma pagamentos. Confira o recebimento no aplicativo do seu banco.</footer>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
